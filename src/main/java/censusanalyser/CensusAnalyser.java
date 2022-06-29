@@ -18,8 +18,7 @@ public class CensusAnalyser {
             throw new CensusAnalyserException("Wrong extension", CensusAnalyserException.ExceptionType.CENSUS_FILETYPE_PROBLEM);
         }
 
-        try {
-            Reader reader = Files.newBufferedReader(Paths.get(csvFilePath));
+        try(Reader reader = Files.newBufferedReader(Paths.get(csvFilePath))) {
             CsvToBeanBuilder<IndiaCensusCSV> csvToBeanBuilder = new CsvToBeanBuilder<>(reader);
             csvToBeanBuilder.withType(IndiaCensusCSV.class);
             csvToBeanBuilder.withIgnoreLeadingWhiteSpace(true);
