@@ -4,21 +4,21 @@ import com.opencsv.bean.CsvBindByName;
 public class IndianStateCode {
 
     @CsvBindByName(column = "SrNo",required = true)
-    public int SrNo;
+    public int srNo;
     @CsvBindByName(column = "StateName",required = true)
-    public String StateName;
+    public String stateName;
     @CsvBindByName(column = "TIN",required = true)
     public int TIN;
     @CsvBindByName(column = "StateCode",required = true)
-    public String StateCode;
+    public String stateCode;
 
     @Override
     public String toString() {
         return "IndianStateCode{" +
-                "SrNo=" + SrNo +
-                ", StateName='" + StateName + '\'' +
+                "srNo=" + srNo +
+                ", stateName='" + stateName + '\'' +
                 ", TIN=" + TIN +
-                ", StateCode='" + StateCode + '\'' +
+                ", stateCode='" + stateCode + '\'' +
                 '}';
     }
 }
