@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <testsuite name="censusanalyser.CensusAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-28T01:29:12" hostname="dell-Latitude-7280" time="0.146">
   <properties/>
   <testcase name="givenIndianCensusCSVFileReturnsCorrectRecords" classname="censusanalyser.CensusAnalyserTest" time="0.146"/>
@@ -15,6 +16,11 @@
 <testsuite name="censusanalyser.CensusAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-30T07:35:11" hostname="dell-Latitude-7280" time="0.201">
   <properties/>
   <testcase name="givenIndiaStateCodeCSVFile_ShouldReturnsCorrectRecords" classname="censusanalyser.CensusAnalyserTest" time="0.201"/>
+>>>>>>> UC2-IndianStateCodeFile
+=======
+<testsuite name="censusanalyser.CensusAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-30T07:55:18" hostname="dell-Latitude-7280" time="0.004">
+  <properties/>
+  <testcase name="givenIndiaStateCodeData_WithWrongType_ShouldThrowException" classname="censusanalyser.CensusAnalyserTest" time="0.004"/>
 >>>>>>> UC2-IndianStateCodeFile
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
