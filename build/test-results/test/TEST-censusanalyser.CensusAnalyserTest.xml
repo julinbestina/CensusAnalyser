@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="censusanalyser.CensusAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-28T01:29:12" hostname="dell-Latitude-7280" time="0.146">
   <properties/>
   <testcase name="givenIndianCensusCSVFileReturnsCorrectRecords" classname="censusanalyser.CensusAnalyserTest" time="0.146"/>
+=======
+<testsuite name="censusanalyser.CensusAnalyserTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-06-28T02:01:51" hostname="dell-Latitude-7280" time="0.21">
+  <properties/>
+  <testcase name="givenIndianCensusCSVFileReturnsCorrectRecords" classname="censusanalyser.CensusAnalyserTest" time="0.156"/>
+  <testcase name="givenIndiaCensusData_WithWrongFile_ShouldThrowException" classname="censusanalyser.CensusAnalyserTest" time="0.051"/>
+  <testcase name="givenIndiaCensusData_WithWrongType_ShouldThrowException" classname="censusanalyser.CensusAnalyserTest" time="0.002"/>
+>>>>>>> UC1-LoadCSVFile
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
