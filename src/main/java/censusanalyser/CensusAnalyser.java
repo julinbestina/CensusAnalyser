@@ -31,6 +31,11 @@ public class CensusAnalyser {
         }
         }
     public int loadIndiaStateCodeData(String csvFilePath) throws CensusAnalyserException {
+        String[] filePath = csvFilePath.split("[.]");
+        String extension = filePath[filePath.length - 1];
+        if (!extension.equals("csv")) {
+            throw new CensusAnalyserException("Wrong extension", CensusAnalyserException.ExceptionType.CENSUS_FILETYPE_PROBLEM);
+        }
 
         try (Reader reader = Files.newBufferedReader(Paths.get(csvFilePath))) {
             CsvToBeanBuilder<IndianStateCode> csvToBeanBuilder = new CsvToBeanBuilder<>(reader);
@@ -41,6 +46,8 @@ public class CensusAnalyser {
             return indianStateCodeList.size();
         } catch (IOException e) {
             throw new CensusAnalyserException(e.getMessage(), CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM);
+        } catch (RuntimeException e) {
+            throw new CensusAnalyserException(e.getMessage(), CensusAnalyserException.ExceptionType.CENSUS_FILE_CONTENT_PROBLEM);
         }
     }
 }
