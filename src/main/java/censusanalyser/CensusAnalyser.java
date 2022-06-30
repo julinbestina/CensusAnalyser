@@ -24,6 +24,24 @@ public class CensusAnalyser {
             CsvToBean<IndiaCensusCSV> csvToBean = csvToBeanBuilder.build();
             List<IndiaCensusCSV> indiaCensusCSVList = csvToBean.parse();
             return indiaCensusCSVList.size();
+<<<<<<< HEAD
+=======
+        } catch (IOException e) {
+            throw new CensusAnalyserException(e.getMessage(), CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM);
+        } catch (RuntimeException e) {
+            throw new CensusAnalyserException(e.getMessage(), CensusAnalyserException.ExceptionType.CENSUS_FILE_CONTENT_PROBLEM);
+        }
+        }
+    public int loadIndiaStateCodeData(String csvFilePath) throws CensusAnalyserException {
+
+        try (Reader reader = Files.newBufferedReader(Paths.get(csvFilePath))) {
+            CsvToBeanBuilder<IndianStateCode> csvToBeanBuilder = new CsvToBeanBuilder<>(reader);
+            csvToBeanBuilder.withType(IndianStateCode.class);
+            csvToBeanBuilder.withIgnoreLeadingWhiteSpace(true);
+            CsvToBean<IndianStateCode> csvToBean = csvToBeanBuilder.build();
+            List<IndianStateCode> indianStateCodeList = csvToBean.parse();
+            return indianStateCodeList.size();
+>>>>>>> UC2-IndianStateCodeFile
         } catch (IOException e) {
             throw new CensusAnalyserException(e.getMessage(), CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM);
         } catch (Exception e) {
