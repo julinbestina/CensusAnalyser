@@ -14,12 +14,8 @@ public class CensusAnalyserTest {
     private static final String CSV_FILE_WITH_WRONG_DELIMITER = "./src/test/resources/IndiaStateCensusDataWithDelimiter.csv";
     private static final String CSV_FILE_WITH_WRONG_HEADER = "./src/test/resources/IndiaStateCensusDataWithIncorrectHeader.csv";
     private static final String INDIA_STATE_CODE_FILE_PATH = "./src/test/resources/IndiaStateCode.csv";
+    private static final String WRONG_StateCode_FILE_PATH="./src/main/resources/IndiaStateCode.csv";
 
-    private static final String WRONG_CSV_FILE_PATH = "./src/main/resources/IndiaStateCensusData.csv";
-    private static final String WRONG_CSV_FILE_TYPE = "./src/test/resources/IndiaStateCensusData.pdf";
-    private static final String CSV_FILE_WITH_WRONG_DELIMITER = "./src/test/resources/IndiaStateCensusDataWithDelimiter.csv";
-    private static final String CSV_FILE_WITH_WRONG_HEADER = "./src/test/resources/IndiaStateCensusDataWithIncorrectHeader.csv";
-    private static final String INDIA_STATECODE_CSV_FILE_PATH = "./src/test/resources/IndiaStateCode.csv";
     @Test
     public void givenIndianCensusCSVFileReturnsCorrectRecords() {
         try {
@@ -65,10 +61,6 @@ public class CensusAnalyserTest {
             Assert.assertEquals(CensusAnalyserException.ExceptionType.CENSUS_FILE_CONTENT_PROBLEM, e.type);
         }
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> UC2-IndianStateCodeFile
     @Test
     public void givenIndiaCensusData_WithWrongHeader_ShouldThrowException() {
         try {
@@ -80,19 +72,28 @@ public class CensusAnalyserTest {
             Assert.assertEquals(CensusAnalyserException.ExceptionType.CENSUS_FILE_CONTENT_PROBLEM, e.type);
         }
     }
-<<<<<<< HEAD
 
-=======
     @Test
     public void givenIndiaStateCodeCSVFile_ShouldReturnsCorrectRecords() {
         try {
             CensusAnalyser censusAnalyser = new CensusAnalyser();
-            int numOfRecords = censusAnalyser.loadIndiaStateCodeData(INDIA_STATECODE_CSV_FILE_PATH);
+            int numOfRecords = censusAnalyser.loadIndiaStateCodeData(INDIA_STATE_CODE_FILE_PATH);
             Assert.assertEquals(37, numOfRecords);
         } catch (CensusAnalyserException e) {
         }
     }
->>>>>>> UC2-IndianStateCodeFile
+
+    @Test
+    public void givenIndiaStateCodeData_WithWrongFile_ShouldThrowException() {
+        try {
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            ExpectedException exceptionRule = ExpectedException.none();
+            exceptionRule.expect(CensusAnalyserException.class);
+            censusAnalyser.loadIndiaCensusData(WRONG_StateCode_FILE_PATH);
+        } catch (CensusAnalyserException e) {
+            Assert.assertEquals(CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM, e.type);
+        }
+    }
 
 
 }

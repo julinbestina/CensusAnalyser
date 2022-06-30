@@ -24,8 +24,6 @@ public class CensusAnalyser {
             CsvToBean<IndiaCensusCSV> csvToBean = csvToBeanBuilder.build();
             List<IndiaCensusCSV> indiaCensusCSVList = csvToBean.parse();
             return indiaCensusCSVList.size();
-<<<<<<< HEAD
-=======
         } catch (IOException e) {
             throw new CensusAnalyserException(e.getMessage(), CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM);
         } catch (RuntimeException e) {
@@ -41,11 +39,8 @@ public class CensusAnalyser {
             CsvToBean<IndianStateCode> csvToBean = csvToBeanBuilder.build();
             List<IndianStateCode> indianStateCodeList = csvToBean.parse();
             return indianStateCodeList.size();
->>>>>>> UC2-IndianStateCodeFile
         } catch (IOException e) {
             throw new CensusAnalyserException(e.getMessage(), CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM);
-        } catch (Exception e) {
-            throw new CensusAnalyserException(e.getMessage(), CensusAnalyserException.ExceptionType.CENSUS_FILE_CONTENT_PROBLEM);
         }
     }
 }
